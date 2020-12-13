@@ -1,13 +1,28 @@
 <?php
-// Generate random questions
 
-// Loop for required number of questions
+// Create a fucntion to dynamically generate a set of quiz questions in each session
+function generate_questions()
+{
+    $numOfQuestions = 10;
 
-// Get random numbers to add
+    for ($i = 0; $i < $numOfQuestions; $i++) {
+        $leftAdder = rand(1, 100);
+        $rightAdder = rand(1, 100);
+        $correctAnswer = $leftAdder + $rightAdder;
+        $firstIncorrectAnswer = rand($correctAnswer - 10, $correctAnswer + 10);
+        do {
+            $secondIncorrectAnswer = rand($correctAnswer - 10, $correctAnswer + 10);
+        } while ($secondIncorrectAnswer == $firstIncorrectAnswer);
 
-// Calculate correct answer
+        $questions[$i] =
+            [
+                "leftAdder" => $leftAdder,
+                "rightAdder" => $rightAdder,
+                "correctAnswer" => $correctAnswer,
+                "firstIncorrectAnswer" => $firstIncorrectAnswer,
+                "secondIncorrectAnswer" => $secondIncorrectAnswer
+            ];
+    }
 
-// Get incorrect answers within 10 numbers either way of correct answer
-// Make sure it is a unique answer
-
-// Add question and answer to questions array
+    return $questions;
+}
