@@ -16,7 +16,7 @@
         <div id="quiz-box">
             <?php
             if (!empty($toast)) {
-                echo "<p>$toast</p>";
+                echo $toast;
             }
             if (!$show_score) {
                 echo '<p class="breadcrumbs">Question ' . count($_SESSION['used_indexes']) . ' of ' . $totalQuestions . '</p>';
@@ -30,6 +30,7 @@
             }
             if ($show_score) {
                 echo '<p class="quiz">You got ' . $_SESSION['total_correct'] . ' of ' . $totalQuestions . ' correct!</>';
+                echo '<br>';
                 echo '<a class="btn" href="/index.php">Take Quiz Again</a>';
             }
             ?>

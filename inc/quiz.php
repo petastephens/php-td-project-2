@@ -14,10 +14,10 @@ $show_score = false;
 // Check if the current answer is correct or not and set appropriate message to user
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['answer'] == $_SESSION['questions'][$_POST['index']]['correctAnswer']) {
-        $toast = "Nice one, you are correct!";
+        $toast = '<h3 class="toast-correct">&#10004; Nice one, you are correct!</h3>';
         $_SESSION['total_correct'] += 1;
     } else {
-        $toast = "Oops, not correct this time.";
+        $toast = '<h3 class="toast-incorrect">&#10008; Oops, not correct this time.</h3>';
     }
 }
 

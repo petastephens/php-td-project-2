@@ -56,7 +56,7 @@ body {
   border: 2px solid #000;
   color: #C6FCED;
   background-color: #000;
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
   padding: 15px;
   margin: 10px;
   transition: .5s ;
@@ -71,4 +71,36 @@ body {
 
 .btn:focus {
   outline: none;
+}
+
+.toast-correct {
+  width: 15em;
+  display: inline-block;
+  bottom: 150px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  color: #000;
+  background-color: #FFA384;
+  font-size: 1.25rem;
+  padding: 10px;
+  margin: 10px;
+  transition: .5s ;
+  text-decoration: none;
+  text-align: center;
+}
+
+.toast-incorrect {
+  width: 15em;
+  display: inline-block;
+  bottom: 150px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  color: #000;
+  background-color: #EFE7BC;
+  font-size: 1.25rem;
+  padding: 10px;
+  margin: 10px;
+  transition: .5s ;
+  text-decoration: none;
+  text-align: center;
 }
