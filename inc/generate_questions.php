@@ -9,10 +9,13 @@ function generate_questions()
         $leftAdder = rand(1, 100);
         $rightAdder = rand(1, 100);
         $correctAnswer = $leftAdder + $rightAdder;
-        $firstIncorrectAnswer = rand($correctAnswer - 10, $correctAnswer + 10);
+        do {
+            $firstIncorrectAnswer = rand($correctAnswer - 10, $correctAnswer + 10);
+        } while ($firstIncorrectAnswer == $correctAnswer);
+        
         do {
             $secondIncorrectAnswer = rand($correctAnswer - 10, $correctAnswer + 10);
-        } while ($secondIncorrectAnswer == $firstIncorrectAnswer);
+        } while ($secondIncorrectAnswer == $firstIncorrectAnswer || $secondIncorrectAnswer == $correctAnswer);
 
         $questions[$i] =
             [
